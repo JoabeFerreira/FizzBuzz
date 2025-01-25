@@ -4,9 +4,10 @@
     {
         private readonly Dictionary<int, string> tokens = [];
 
-        public void RegisterDivisorToken(int divisor, string token)
+        public TwistedFizzBuzzGenerator RegisterDivisorToken(int divisor, string token)
         {
             tokens[divisor] = token;
+            return this;
         }
 
         public IEnumerable<string> GenerateFizzBuzzInRange(int start, int end)
