@@ -154,5 +154,11 @@ namespace TwistedFizzBuzz.Tests
 
             Assert.NotEmpty(result);
         }
+
+        [Fact(Skip = "API is unavailable, so this method could not be tested.")]
+        public async Task RegisterTokens()
+        {
+            // Placeholder test: Unable to test due to API unavailability.
+        }
     }
 }
