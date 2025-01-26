@@ -1,9 +1,9 @@
 ﻿using TwistedFizzBuzz;
 
 var generator = new TwistedFizzBuzzGenerator()
-    .RegisterDivisorToken(5, "Fizz")
-    .RegisterDivisorToken(9, "Buzz")
-    .RegisterDivisorToken(27, "Bar");
+    .RegisterToken(5, "Fizz")
+    .RegisterToken(9, "Buzz")
+    .RegisterToken(27, "Bar");
 
 foreach (string fizzBuzz in generator.GenerateFizzBuzzInRange(-20, 127))
 {
