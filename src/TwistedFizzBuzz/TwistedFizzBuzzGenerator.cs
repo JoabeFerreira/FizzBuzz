@@ -94,7 +94,8 @@ namespace TwistedFizzBuzz
 
         /// <summary>
         /// Asynchronously retrieves divisor-token pairs from an API and registers them.<br/>
-        /// The API response should be in JSON format as a dictionary.
+        /// The API response should be in JSON format as a dictionary.<br/><br/>
+        /// Note: This method has not been tested due to the unavailability of the API.
         /// </summary>
         /// <returns>The generator instance with the registered tokens.</returns>
         public async Task<TwistedFizzBuzzGenerator> RegisterTokensFromApi()
