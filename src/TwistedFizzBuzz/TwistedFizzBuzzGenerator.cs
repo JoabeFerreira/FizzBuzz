@@ -12,7 +12,7 @@ namespace TwistedFizzBuzz
         private readonly Dictionary<int, string> tokens = [];
 
         /// <summary>
-        /// Registers a divisor-token pair to the generator.
+        /// Registers a divisor-token pair to the generator.<br/>
         /// Throws an <see cref="ArgumentException"/> if the divisor is zero.
         /// </summary>
         /// <param name="divisor">The divisor for the token.</param>
@@ -31,7 +31,7 @@ namespace TwistedFizzBuzz
         }
 
         /// <summary>
-        ///Generates FizzBuzz output for a range of integers from start to end, inclusive. 
+        ///Generates FizzBuzz output for a range of integers from start to end, inclusive.<br/>
         ///Handles both ascending and descending ranges.
         /// </summary>
         public IEnumerable<string> GenerateFizzBuzzInRange(int start, int end)
@@ -96,12 +96,12 @@ namespace TwistedFizzBuzz
         /// Asynchronously retrieves divisor-token pairs from an API and registers them.<br/>
         /// The API response should be in JSON format as a dictionary.
         /// </summary>
-        /// <param name="apiUrl">The URL of the API to fetch tokens from.</param>
         /// <returns>The generator instance with the registered tokens.</returns>
-        public async Task<TwistedFizzBuzzGenerator> RegisterTokensFromApi(string apiUrl)
+        public async Task<TwistedFizzBuzzGenerator> RegisterTokensFromApi()
         {
+            const string TOKENS_API_URL = "https://rich-red-cocoon-veil.cyclic.app/";
             HttpClient client = new HttpClient();
-            string response = await client.GetStringAsync(apiUrl);
+            string response = await client.GetStringAsync(TOKENS_API_URL);
             var tokens = JsonSerializer.Deserialize<Dictionary<int, string>>(response);
 
             if (tokens != null)
